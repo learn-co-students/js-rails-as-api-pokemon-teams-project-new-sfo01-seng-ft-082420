@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const getTrainers = (url) => {
     fetch(url).then(res => res.json()).then(trainers => {
-        trainers.forEach(trainer => buildCard(trainer))
+        trainers.forEach(trainer => buildCard(trainer));
     });
 };
 
@@ -19,15 +19,15 @@ const buildCard = (trainer) => {
     div.className = 'card';
     div.dataset.id = trainer.id
     const p = document.createElement('p');
-    p.textContent = trainer.name
+    p.textContent = trainer.name;
     const addButton = document.createElement('button');
-    addButton.dataset.trainerId = trainer.id
+    addButton.dataset.trainerId = trainer.id;
     addButton.textContent = 'Add Pokemon';
     addButton.addEventListener('click', e => addBtnClick(e, ul));
     const ul = document.createElement('ul');
     trainer.pokemons.forEach(pokemon => addPokemon(pokemon, ul));
-    div.append(p, addButton, ul)
-    main.append(div)
+    div.append(p, addButton, ul);
+    main.append(div);
 };
 
 const addBtnClick = (e, ul) => {
@@ -53,8 +53,8 @@ const addPokemon = (pokemon, ul) => {
     releaseBtn = document.createElement('button');
     releaseBtn.className = 'release';
     releaseBtn.dataset.pokemonId = pokemon.id;
-    releaseBtn.textContent = 'Release'
-    releaseBtn.addEventListener('click', e => releaseBtnClk(e, ul))
+    releaseBtn.textContent = 'Release';
+    releaseBtn.addEventListener('click', e => releaseBtnClk(e, ul));
     li.append(releaseBtn);
     ul.append(li);
 };
@@ -68,5 +68,6 @@ const releaseBtnClk = (e, ul) => {
 };
 
 const removePokemon = (r, ul) => {
-    ul.querySelector(`[data-pokemon-id="${r.id}"]`).parentElement.remove();
+    const target = ul.querySelector(`[data-pokemon-id="${r.id}"]`);
+    target.parentElement.remove();
 }
