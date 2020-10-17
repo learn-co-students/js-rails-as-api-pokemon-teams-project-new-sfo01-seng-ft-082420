@@ -40,7 +40,7 @@ const addBtnClick = (e, ul) => {
                 trainer_id: e.target.dataset.trainerId
             })
         }).then(r => r.json()).then(resp => {
-            addPokemon(resp.newPoke, ul);
+            addPokemon(resp, ul);
         });
     } else {
         alert('Pokemon Full!');
