@@ -23,8 +23,8 @@ const buildCard = (trainer) => {
     const addButton = document.createElement('button');
     addButton.dataset.trainerId = trainer.id;
     addButton.textContent = 'Add Pokemon';
-    addButton.addEventListener('click', e => addBtnClick(e, ul));
     const ul = document.createElement('ul');
+    addButton.addEventListener('click', e => addBtnClick(e, ul));
     trainer.pokemons.forEach(pokemon => addPokemon(pokemon, ul));
     div.append(p, addButton, ul);
     main.append(div);
