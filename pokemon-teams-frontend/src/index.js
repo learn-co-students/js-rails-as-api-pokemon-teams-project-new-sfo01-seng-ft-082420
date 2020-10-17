@@ -35,12 +35,10 @@ const addBtnClick = (e, ul) => {
         fetch(POKEMONS_URL, {
             method: 'POST', headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
+            }, body: JSON.stringify({
                 trainer_id: e.target.dataset.trainerId
-            })
-        }).then(r => r.json()).then(resp => {
-            addPokemon(resp, ul);
+            })}).then(r => r.json()).then(resp => {
+                addPokemon(resp, ul);
         });
     } else {
         alert('Pokemon Full!');
