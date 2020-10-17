@@ -50,7 +50,6 @@ const addBtnClick = (e, ul) => {
 const addPokemon = (pokemon, ul) => {
     const li = document.createElement('li');
     li.textContent = `${pokemon.nickname} (${pokemon.species})`;
-    // This button needs a listener - release a pokemon
     releaseBtn = document.createElement('button');
     releaseBtn.className = 'release';
     releaseBtn.dataset.pokemonId = pokemon.id;
